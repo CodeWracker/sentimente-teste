@@ -78,7 +78,6 @@
       max-width: 688px;
       /* background-color: var(--verde-claro); */
       /* background verde claro com opacidade de 0.5 */
-        background-color: rgba(204, 219, 134, 0.8);
         
     }
     .btn-whatsapp {
@@ -98,7 +97,6 @@
     /* Imagem ao fundo, com opacidade */
     .hero-img {
       position: absolute;
-      top: 0px;    /* ajuste conforme necessário */
       right: 0;     /* alinha a borda direita ao container */
       height: 340px; /* ajuste conforme desejado */
       width: auto; /* mantém a proporção da imagem */
@@ -106,9 +104,33 @@
     }
 
     /* Esconde imagem em telas menores que 760px */
-    @media (max-width: 1200px) {
+    @media (max-width: 1200px ) {
       .hero-title,  .hero-div {
         background-color: rgba(204, 219, 134, 0.8);
+      }
+    }
+
+    @media (max-width: 600px) {
+        .hero-title,  .hero-div {
+        background-color: none;
+      }
+      .hero-subtitle {
+        background-color: rgba(204, 219, 134, 0.8);
+      }
+      .hero-img {
+        margin-top:0px;
+        height: 300px; /* ajuste conforme desejado */
+      }
+    }
+
+    @media (max-width: 400px) {
+        .hero-title,  .hero-div, .hero-subtitle {
+        background-color: none;
+      }
+      .hero-img {
+        margin-top:110px;
+        height: 250px; /* ajuste conforme desejado */
+        opacity: 0.3; /* ajuste de opacidade */
       }
     }
 
