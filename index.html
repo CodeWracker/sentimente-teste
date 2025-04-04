@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentimente - Terapia Online</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- AOS Scroll Animation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <style>
+    /* Paleta principal inspirada na logo */
+    /* Ajuste conforme necessário */
+    :root {
+      --verde-claro: #ccdb86;   /* Fundo principal */
+      --verde-escuro: #295f2f; /* Cor principal de texto e destaque */
+      --verde-medio: #a4db86;  /* Pode ser usado em gradientes ou hovers */
+    }
+
+    body {
+      background: var(--verde-escuro);
+      color: var(--verde-escuro);
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding-top: 70px; /* para não ficar escondido atrás do header fixo */
+    }
+
+    h1, h2, h3, .navbar-brand {
+      font-family: 'Pacifico', cursive;
+    }
+    .header-title{
+      font-size: 2.5rem;
+      color: var(--verde-escuro);
+    }
+    .header-subtitle{
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    header {
+      background: var(--verde-claro);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      height: auto;
+    }
+
+    .logo {
+      max-width: 120px;
+    }
+
+    /* Hero */
+    .hero {
+      /* Gradiente entre o verde-escuro e um tom médio */
+      background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-escuro) 100%);
+      color: #fff;
+      padding: 6rem 0 3rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    /* Botão de WhatsApp */
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebe57;
+      transform: scale(1.03);
+      transition: 0.3s ease;
+    }
+
+    .info-section {
+      padding: 4rem 0;
+      color: #fff
+      
+    }
+
+    .testimonial-card {
+      background-color: var(--verde-claro); /* leve transparência no fundo */
+      color: var(--verde-escuro);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .video-section {
+      background-color: var(--verde-claro);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .video-container {
+      max-width: 800px;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+    }
+
+    iframe, video {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background: var(--verde-escuro);
+      color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container d-flex align-items-center justify-content-center">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <p class="navbar-brand header-title">Sentimente</p>
+        <p class="navbar-brand header-subtitle">Sentimentos e Emoções tem um lugar certo</p>
+      </div>
+      
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2 class="animate__animated animate__fadeInDown">Descubra um novo caminho para o autoconhecimento</h2>
+      <p class="animate__animated animate__fadeInUp">A terapia é um espaço seguro e acolhedor para transformar sua vida. Experimente a terapia online com seriedade e cuidado.</p>
+    </div>
+  </section>
+
+  <!-- Informações -->
+  <section class="info-section">
+    <div class="container" data-aos="fade-up">
+      <h3 class="text-center mb-4">Por que escolher a terapia online?</h3>
+      <p class="text-center mb-5">
+        Cada sessão é feita via <strong>Google Meet</strong>, uma plataforma gratuita da Google para videochamadas. 
+        Você não precisa instalar nada nem criar contas novas – se você tem um celular Android ou Gmail, você já tem tudo pronto.
+        Só precisa clicar no link que eu envio, usar fone de ouvido e pronto: é só conversar.
+      </p>
+      <p class="text-center mb-5">
+        As sessões duram 50 minutos e o preço base é R$150. A frequência é flexível e ajustada conforme sua necessidade e realidade financeira.
+      </p>
+
+      <!-- Botão de WhatsApp -->
+      <div class="text-center">
+        <a href="https://wa.me/5511972210022" class="btn btn-whatsapp btn-lg">Agende sua Consulta via WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Vídeo -->
+  <section class="video-section">
+    <div class="container" data-aos="fade-up">
+      <h3 class="mb-4">Assista ao vídeo de apresentação</h3>
+      <div class="video-container">
+        <!-- YouTube -->
+        <iframe src="https://www.youtube.com/embed/p86guTTf3eg" frameborder="0" allowfullscreen></iframe>
+
+        <!-- OU use este abaixo para vídeo local:
+        <video controls>
+          <source src="assets/video.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="info-section">
+    <div class="container" data-aos="fade-up">
+      <h3 class="text-center mb-5">O que nossos clientes dizem</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <p>"A terapia com a Sentimente me ajudou a encontrar equilíbrio e confiança."</p>
+            <small>- Cliente Satisfeito</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <p>"Ambiente acolhedor e atendimento incrível. Recomendo de olhos fechados."</p>
+            <small>- Cliente Feliz</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <p>"Nunca imaginei que terapia online poderia ser tão transformadora."</p>
+            <small>- Cliente Transformado</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Sentimente. Todos os direitos reservados.</p>
+      <p>
+        <a href="https://www.sentimente.com" class="text-white text-decoration-none">www.sentimente.com</a> | 
+        <a href="https://www.instagram.com/sentimente.psicologia" class="text-white text-decoration-none">Instagram</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false
+    });
+  </script>
+</body>
+</html>
