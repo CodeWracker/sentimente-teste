@@ -18,7 +18,7 @@
     rel="stylesheet"
   />
 
-  <!-- AOS (opcional) -->
+  <!-- AOS (opcional, caso queira manter) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
@@ -26,9 +26,10 @@
 
   <style>
     :root {
-      --verde-claro: #ccdb86;   /* Fundo principal */
-      --verde-escuro: #295f2f; /* Cor de destaque */
-      --verde-medio: #a4db86;  /* Tom intermediário */
+      /* Mesma paleta do código original */
+      --verde-claro: #ccdb86;   /* Ex: Fundo principal */
+      --verde-escuro: #295f2f; /* Ex: Destaques */
+      --verde-medio: #a4db86;  /* Possível uso em hover ou detalhes */
     }
 
     body {
@@ -37,51 +38,73 @@
       font-family: 'Roboto', sans-serif;
       margin: 0; 
       padding: 0;
-      overflow-x: hidden; 
+      overflow-x: hidden; /* evitar scroll horizontal se a imagem ultrapassar a tela */
     }
 
     /* Cabeçalho simples */
     header {
       background-color: var(--verde-escuro);
       color: #fff;
-      padding: 1.5rem 0;
+      padding: 1rem 0;
     }
-    header .title {
+    .navbar-brand {
       font-family: 'Pacifico', cursive;
-      font-size: 2rem;
-      margin: 0;
+      font-size: 1.8rem;
     }
-    header .subtitle {
-      font-size: 1.2rem;
-      margin: 0;
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      text-decoration: underline;
     }
 
-    /* Seção Hero */
+
     .hero {
-      position: relative; 
-      padding: 3rem 0 5rem; /* Espaçamento superior e inferior */
-    }
-    .hero .container {
-      position: relative;
-    }
+  position: relative;       /* Controla o posicionamento interno */
+  width: 100%;
+  /* ou min-height: 500px; se preferir algo menor */
+  overflow: hidden;         /* Para esconder eventuais excessos da imagem */
+  background-color: #cbd588; /* Exemplo de cor de fundo */
+} 
+
+/* 60 vh se width da tela menor que 400px, senão 50 */
+@media (max-width: 410px) {
+  .hero {
+    height: 60vh;           /* Altura da seção hero */
+  }
+}
+@media (min-width: 421px) {
+  .hero {
+    height: 40vh;           /* Altura da seção hero */
+  }
+}
+
+.hero .human {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;            /* Faz a imagem acompanhar a altura da .hero */
+  object-fit: cover;       /* Preenche o container mantendo proporção */
+  z-index: -1;             /* Fica atrás do conteúdo */
+}
+
+.hero-content {
+  position: relative;      /* Fica acima da imagem */
+  z-index: 1;              /* Não deixa o conteúdo ficar atrás da imagem */
+  padding: 2rem;           /* Espaço interno de exemplo */
+}
+
+
+
     .hero-title {
       font-size: 2rem;
       font-weight: 700;
-      background-color: rgba(204, 219, 134, 0.8);
-      margin-bottom: 0px;
-    }
-    .hero-div{
-        width: 100%;
-        height: 10px;
-      background-color: rgba(204, 219, 134, 0.8);
     }
     .hero-subtitle {
       font-size: 1.1rem;
-      max-width: 688px;
-      /* background-color: var(--verde-claro); */
-      /* background verde claro com opacidade de 0.5 */
-        background-color: rgba(204, 219, 134, 0.8);
-        
+      margin-top: 1rem;
+      max-width: 550px;
     }
     .btn-whatsapp {
       background-color: #25D366;
@@ -97,24 +120,20 @@
       transition: 0.3s ease;
     }
 
-    /* Imagem ao fundo, com opacidade */
+    /* Imagem de fundo "atrás" do conteúdo */
     .hero-img {
       position: absolute;
-      top: 50px;    /* ajuste conforme necessário */
-      right: 0;     /* alinha a borda direita ao container */
-      width: 340px; /* ajuste conforme desejado */
-      max-width: 50%;
+      top: 0px; /* ajuste se preciso */
+      right: 10%;
+      width: auto;
+      max-width: 60%;
       z-index: 1;
+      opacity: 0.95; /* opcional, dar leve transparência */
+      background-color: red;
+      padding: 0;;
     }
 
-    /* Esconde imagem em telas menores que 760px */
-    @media (max-width: 767px) {
-      .hero-img {
-        display: none;
-      }
-    }
-
-    /* Seção de Info */
+    /* Seção de Info: "Por que escolher a terapia online?" */
     .info-section {
       background-color: #fff;
       padding: 3rem 1rem;
@@ -122,28 +141,25 @@
       border-radius: 15px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       position: relative;
-      z-index: 3;
+      z-index: 3; /* Para sobrepor a imagem que vem de trás */
     }
     .info-section h3 {
       margin-bottom: 1.5rem;
       font-size: 1.6rem;
     }
 
-    /* Vídeo */
+    /* Seção de vídeo */
     .video-section {
       margin-top: 3rem;
       margin-bottom: 3rem;
-    }
-    .video-section h3 {
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
     }
     .video-container {
       max-width: 720px;
       margin: 0 auto;
       aspect-ratio: 16/9;
     }
-    .video-container iframe {
+    .video-container iframe,
+    .video-container video {
       width: 100%;
       height: 100%;
       border-radius: 8px;
@@ -153,10 +169,6 @@
     /* Depoimentos */
     .testimonial-section {
       margin-bottom: 3rem;
-    }
-    .testimonial-section h3 {
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
     }
     .testimonial-card {
       background-color: var(--verde-medio);
@@ -174,9 +186,6 @@
       text-align: center;
       padding: 1.5rem 0;
     }
-    footer p {
-      margin: 0.5rem 0;
-    }
     footer a {
       color: #fff;
       text-decoration: none;
@@ -188,62 +197,78 @@
 </head>
 <body>
 
-  <!-- Cabeçalho -->
+  <!-- Cabeçalho (Navbar) -->
   <header>
-    <div class="container text-center">
-      <h1 class="title">Sentimente</h1>
-      <h2 class="subtitle">Sentimentos e Emoções tem um lugar certo</h2>
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-dark">
+        <a class="navbar-brand" href="#">Sentimente</a>
+        <button 
+          class="navbar-toggler" 
+          type="button" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navMenu"
+          aria-controls="navMenu" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+            <li class="nav-item"><a href="#servicos" class="nav-link">Serviços</a></li>
+            <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </header>
 
   <!-- Seção Hero -->
   <section class="hero">
-    <div class="container">
-      <!-- Imagem ao fundo -->
-      <img src="./human.png" alt="Pessoa segurando livro" class="hero-img" />
+    <!-- Imagem atrás do conteúdo -->
+    <img src="./human.png" alt="Pessoa segurando livro" class="hero-img" />
 
-      <!-- Conteúdo em primeiro plano -->
-      <div class="position-relative" style="z-index:2;">
-        <h2 class="hero-title">Descubra um novo caminho para o autoconhecimento</h2>
-        <div class="hero-div" ></div>
-        <p class="hero-subtitle">
-          A terapia é um espaço seguro e acolhedor para transformar sua vida. 
-          Experimente a terapia online com seriedade e cuidado.
-        </p>
-        <a 
-          href="https://wa.me/5511972210022" 
-          target="_blank" 
-          class="btn btn-whatsapp"
-        >
-          Agende sua Consulta via WhatsApp
-        </a>
-      </div>
+    <div class="container hero-content">
+      <h1 class="hero-title">Descubra um novo caminho para o autoconhecimento</h1>
+      <p class="hero-subtitle">
+        A terapia é um espaço seguro e acolhedor para transformar sua vida. 
+        Experimente a terapia online com seriedade e cuidado, diretamente do conforto de sua casa.
+      </p>
+      <a 
+        href="https://wa.me/5511972210022" 
+        target="_blank" 
+        class="btn btn-whatsapp"
+      >
+        Agende sua Consulta via WhatsApp
+      </a>
     </div>
   </section>
 
-  <!-- Seção de Informações -->
-  <section class="container info-section">
+  <!-- Seção de Informações / "Por que escolher a terapia online?" -->
+  <section class="container info-section" id="sobre">
     <h3 class="text-center">Por que escolher a terapia online?</h3>
     <p class="text-center mb-4">
-      Cada sessão é feita via <strong>Google Meet</strong>, uma plataforma gratuita da Google para videochamadas. 
-      Você não precisa instalar nada nem criar contas novas – se você tem um celular Android ou Gmail, você já tem tudo pronto. 
+      Cada sessão é feita via <strong>Google Meet</strong>, uma plataforma gratuita do Google para videochamadas. 
+      Você não precisa instalar nada nem criar contas novas – se você tem um celular Android ou Gmail, você já tem tudo pronto.
       Só precisa clicar no link que eu envio, usar fone de ouvido e pronto: é só conversar.
     </p>
     <p class="text-center">
-      As sessões duram 50 minutos e o preço base é <strong>R$150</strong>. A frequência é flexível e ajustada conforme sua
-      necessidade e realidade financeira.
+      As sessões duram 50 minutos e o preço base é <strong>R$150</strong>. A frequência é flexível e ajustada conforme a sua necessidade
+      e realidade financeira.
     </p>
   </section>
 
   <!-- Seção de Vídeo -->
-  <section class="video-section">
+  <section class="video-section" id="servicos">
     <div class="container">
-      <h3 class="text-center">Assista ao vídeo de apresentação</h3>
+      <h3 class="text-center mb-4">Conheça mais sobre o processo terapêutico</h3>
       <div class="video-container">
-        <!-- Exemplo de vídeo (YouTube) -->
+        <!-- Exemplo com embed do YouTube -->
         <iframe 
-          src="https://www.youtube.com/embed/p86guTTf3eg"
-          frameborder="0"
+          src="https://www.youtube.com/embed/p86guTTf3eg" 
+          frameborder="0" 
           allowfullscreen
         ></iframe>
       </div>
@@ -252,8 +277,8 @@
 
   <!-- Depoimentos -->
   <section class="container testimonial-section">
-    <h3 class="text-center">O que nossos clientes dizem</h3>
-    <div class="row mt-4">
+    <h3 class="text-center mb-5">O que nossos clientes dizem</h3>
+    <div class="row">
       <div class="col-md-4">
         <div class="testimonial-card">
           <p>"A terapia com a Sentimente me ajudou a encontrar equilíbrio e confiança."</p>
@@ -276,7 +301,7 @@
   </section>
 
   <!-- Rodapé -->
-  <footer>
+  <footer id="contato">
     <div class="container">
       <p>&copy; 2025 Sentimente. Todos os direitos reservados.</p>
       <p>
