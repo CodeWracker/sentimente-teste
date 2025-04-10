@@ -180,6 +180,21 @@
       margin-top: 1.5rem;
       transition: 0.3s ease;
       border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media screen and (min-width: 770px) {
+      .btn-whatsapp {
+
+        min-height: 85px;
+      }
+
+    }
+
+    .btn-whatsapp p {
+      margin: 0;
     }
 
     .btn-whatsapp:hover {
@@ -217,42 +232,41 @@
     <h2 class="subtitle">O poder dos óleos essenciais doTerra</h2>
   </header>
 
-<!-- SEÇÃO 1: APRESENTAÇÃO (FUNDO BRANCO) -->
-<section class="section section-white">
-  <div class="container">
-    <h3 class="text-center mb-4">Apresentação</h3>
-    <p>
-      Olá, seja muito bem-vinda(o)! Meu nome é Rosemeire, sou psicóloga e também consultora doTerra. Me apaixonei pelos
-      óleos essenciais e quero te mostrar como eles podem transformar sua vida.
-    </p>
-    <p class="mt-3">
-      Eles me ajudaram no meu próprio equilíbrio emocional, na rotina com a minha família, no sono e na ansiedade.
-      Hoje, uso e compartilho com outras pessoas esse cuidado natural, poderoso e acessível.
-    </p>
-    
-    <!-- Botões para contato no WhatsApp -->
-    <div class="row mt-4">
-      <div class="col-md-6 text-center mb-3">
-        <!-- Link para "Quero ser uma consultora doTerra" -->
-        <a href="https://wa.me/5511972210022?text=Oi, vim pelo site e quero ser uma consultora"
-           target="_blank"
-           class="btn-whatsapp">
-           <i class="fa fa-whatsapp" style="margin:0 5px 0 0;"> </i>
-          Quero ser uma consultora doTerra
-        </a>
-      </div>
-      <div class="col-md-6 text-center mb-3">
-        <!-- Link para "Quero ser uma cliente preferencial" -->
-        <a href="https://wa.me/5511972210022?text=Oi, vim pelo site e quero ser uma cliente preferencial"
-           target="_blank"
-           class="btn-whatsapp">
-           <i class="fa fa-whatsapp" style="margin:0 5px 0 0;"> </i>
-          Quero ser uma cliente preferencial
-        </a>
+  <!-- SEÇÃO 1: APRESENTAÇÃO (FUNDO BRANCO) -->
+  <section class="section section-white">
+    <div class="container">
+      <h3 class="text-center mb-4">Apresentação</h3>
+      <p>
+        Olá, seja muito bem-vinda(o)! Meu nome é Rosemeire, sou psicóloga e também consultora doTerra. Me apaixonei
+        pelos
+        óleos essenciais e quero te mostrar como eles podem transformar sua vida.
+      </p>
+      <p class="mt-3">
+        Eles me ajudaram no meu próprio equilíbrio emocional, na rotina com a minha família, no sono e na ansiedade.
+        Hoje, uso e compartilho com outras pessoas esse cuidado natural, poderoso e acessível.
+      </p>
+
+      <!-- Botões para contato no WhatsApp -->
+      <div class="row mt-4">
+        <div class="col-md-6 text-center mb-6 ">
+          <!-- Link para "Quero ser uma consultora doTerra" -->
+          <a href="https://wa.me/5511972210022?text=Oi, vim pelo site e quero ser uma consultora" target="_blank"
+            class="btn-whatsapp">
+            <p><i class="fa fa-whatsapp" style="margin:0 5px 0 0;"> </i>
+              Quero ser uma consultora doTerra</p>
+          </a>
+        </div>
+        <div class="col-md-6 text-center mb-6 ">
+          <!-- Link para "Quero ser uma cliente preferencial" -->
+          <a href="https://wa.me/5511972210022?text=Oi, vim pelo site e quero ser uma cliente preferencial"
+            target="_blank" class="btn-whatsapp">
+            <p><i class="fa fa-whatsapp" style="margin:0 5px 0 0;"> </i>
+              Quero ser uma cliente preferencial</p>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- SEÇÃO 2: O QUE SÃO ÓLEOS ESSENCIAIS (SEM FUNDO, USA O BODY) -->
@@ -324,7 +338,7 @@
         </div>
       </div>
       <a href="https://wa.me/5511972210022?text=Oi, vim pelo site e quero mais informações sobre o bonus"
-         target="_blank" class="btn-whatsapp mt-4">
+        target="_blank" class="btn-whatsapp mt-4">
         <i class="fa fa-whatsapp" style="margin:0 5px 0 0;"> </i>
         Quero o esse Bônus!
       </a>
