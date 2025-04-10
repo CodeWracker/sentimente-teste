@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sentimente - Terapia Online</title>
+  <!-- Responsivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- AOS (opcional) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+  />
+
+  <style>
+    :root {
+      --verde-claro: #ccdb86;   /* Fundo principal */
+      --verde-escuro: #295f2f; /* Cor de destaque */
+      --verde-medio: #a4db86;  /* Tom intermediário */
+    }
+
+    body {
+      background-color: var(--verde-claro);
+      color: var(--verde-escuro);
+      font-family: 'Roboto', sans-serif;
+      margin: 0; 
+      padding: 0;
+      overflow-x: hidden; 
+    }
+
+    /* Cabeçalho simples */
+    header {
+      background-color: var(--verde-escuro);
+      color: #fff;
+      padding: 1.5rem 0;
+    }
+    header .title {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      margin: 0;
+    }
+    header .subtitle {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    /* Seção Hero */
+    .hero {
+      position: relative; 
+      padding: 3rem 0 5rem; /* Espaçamento superior e inferior */
+    }
+    .hero .container {
+      position: relative;
+    }
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0px;
+    }
+    .hero-div{
+        width: 100%;
+        height: 10px;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      max-width: 688px;
+      /* background-color: var(--verde-claro); */
+      /* background verde claro com opacidade de 0.5 */
+        
+    }
+    .btn-whatsapp {
+      background-color: #25D366;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe57;
+      transform: scale(1.03);
+      transition: 0.3s ease;
+    }
+
+    /* Imagem ao fundo, com opacidade */
+    .hero-img {
+      position: absolute;
+      right: 0;     /* alinha a borda direita ao container */
+      height: 340px; /* ajuste conforme desejado */
+      width: auto; /* mantém a proporção da imagem */
+      z-index: 1;
+    }
+
+    /* Esconde imagem em telas menores que 760px */
+    @media (min-width: 601px) and (max-width: 1200px) {
+      .hero-title,  .hero-div {
+        background-color: rgba(204, 219, 134, 0.8);
+      }
+    }
+
+    @media (min-width: 401px) and (max-width: 600px) {
+        .hero-title,  .hero-div {
+        background-color: none;
+      }
+      .hero-subtitle {
+        background-color: rgba(204, 219, 134, 0.8);
+      }
+      .hero-img {
+        margin-top:0px;
+        height: 300px; /* ajuste conforme desejado */
+      }
+    }
+
+    @media (max-width: 400px) {
+        .hero-title,  .hero-div, .hero-subtitle {
+            background-color: none;
+      }
+      .hero-img {
+        margin-top:110px;
+        height: 250px; /* ajuste conforme desejado */
+        opacity: 0.3; /* ajuste de opacidade */
+      }
+    }
+
+    
+
+    /* Seção de Info */
+    .info-section {
+      background-color: #fff;
+      padding: 3rem 1rem;
+      margin-top: -2rem; 
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 3;
+    }
+    .info-section h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+    }
+
+    /* Vídeo */
+    .video-section {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+    .video-section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    .video-container {
+      max-width: 720px;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Depoimentos */
+    .testimonial-section {
+      margin-bottom: 3rem;
+    }
+    .testimonial-section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    .testimonial-card {
+      background-color: var(--verde-medio);
+      color: var(--verde-escuro);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: var(--verde-escuro);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+    footer p {
+      margin: 0.5rem 0;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container text-center">
+      <h1 class="title">Sentimente</h1>
+      <h2 class="subtitle">Sentimentos e Emoções tem um lugar certo</h2>
+    </div>
+  </header>
+
+  <!-- Seção Hero -->
+  <section class="hero">
+    <div class="container">
+      <!-- Imagem ao fundo -->
+      <img src="./human.png" alt="Pessoa segurando livro" class="hero-img" />
+
+      <!-- Conteúdo em primeiro plano -->
+      <div class="position-relative" style="z-index:2;">
+        <h2 class="hero-title">Descubra um novo caminho para o autoconhecimento</h2>
+        <div class="hero-div" ></div>
+        <p class="hero-subtitle">
+          A terapia é um espaço seguro e acolhedor para transformar sua vida. 
+          Experimente a terapia online com seriedade e cuidado.
+        </p>
+        <a 
+          href="https://wa.me/5511972210022" 
+          target="_blank" 
+          class="btn btn-whatsapp"
+        >
+          Agende sua Consulta via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Informações -->
+  <section class="container info-section">
+    <h3 class="text-center">Por que escolher a terapia online?</h3>
+    <p class="text-center mb-4">
+      Cada sessão é feita via <strong>Google Meet</strong>, uma plataforma gratuita da Google para videochamadas. 
+      Você não precisa instalar nada nem criar contas novas – se você tem um celular Android ou Gmail, você já tem tudo pronto. 
+      Só precisa clicar no link que eu envio, usar fone de ouvido e pronto: é só conversar.
+    </p>
+    <p class="text-center">
+      As sessões duram 50 minutos e o preço base é <strong>R$150</strong>. A frequência é flexível e ajustada conforme sua
+      necessidade e realidade financeira.
+    </p>
+  </section>
+
+  <!-- Seção de Vídeo -->
+  <section class="video-section">
+    <div class="container">
+      <h3 class="text-center">Assista ao vídeo de apresentação</h3>
+      <div class="video-container">
+        <!-- Exemplo de vídeo (YouTube) -->
+        <iframe 
+          src="https://www.youtube.com/embed/p86guTTf3eg"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="container testimonial-section">
+    <h3 class="text-center">O que nossos clientes dizem</h3>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <p>"A terapia com a Sentimente me ajudou a encontrar equilíbrio e confiança."</p>
+          <small>- Cliente Satisfeito</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <p>"Ambiente acolhedor e atendimento incrível. Recomendo de olhos fechados."</p>
+          <small>- Cliente Feliz</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <p>"Nunca imaginei que terapia online poderia ser tão transformadora."</p>
+          <small>- Cliente Transformado</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Sentimente. Todos os direitos reservados.</p>
+      <p>
+        <a href="https://www.sentimente.com">www.sentimente.com</a> | 
+        <a href="https://www.instagram.com/sentimente.psicologia">Instagram</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS (opcional) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false
+    });
+  </script>
+</body>
+</html>
